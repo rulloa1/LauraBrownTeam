@@ -1,95 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
 const Navbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-gray-100 py-4 shadow-sm'
-          : 'bg-transparent border-white/10 py-6'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="block hover:opacity-80 transition-opacity">
-          <Logo variant={isScrolled ? "dark" : "light"} />
-        </a>
+    <nav className="fixed top-6 left-0 w-full z-50 flex justify-center px-4">
+        <div className="glass-panel px-6 py-3 rounded-full flex justify-between items-center gap-8 md:gap-12 shadow-[0_0_20px_rgba(0,0,0,0.5)] bg-[rgba(10,10,10,0.8)] backdrop-blur-xl border border-[rgba(255,255,255,0.08)]">
+            <Logo />
+            
+            <div className="hidden md:flex items-center gap-6">
+                <a href="#how-it-works" className="text-[11px] font-medium text-white/60 hover:text-white transition-colors">How It Works</a>
+                <a href="#meet-lisa" className="text-[11px] font-medium text-white/60 hover:text-white transition-colors">Meet Lisa</a>
+                <a href="#pricing" className="text-[11px] font-medium text-white/60 hover:text-white transition-colors">Pricing</a>
+                <a href="#faq" className="text-[11px] font-medium text-white/60 hover:text-white transition-colors">FAQ</a>
+            </div>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-10">
-          {['Buy', 'Rent', 'Sell', 'Contact'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className={`text-sm font-medium tracking-widest uppercase hover:text-brand-primary transition-colors ${
-                isScrolled ? 'text-gray-800' : 'text-white'
-              }`}
-            >
-              {item}
+            <a href="#contact" className="hidden md:block text-[10px] font-bold bg-gradient-to-r from-brand to-brandDark text-white px-5 py-2 rounded-full hover:brightness-110 transition-all shadow-[0_0_15px_rgba(249,85,0,0.3)]">
+                BOOK A DISCOVERY CALL
             </a>
-          ))}
-        </div>
 
-        {/* CTA Button */}
-        <div className="hidden md:block">
-          <button className={`px-8 py-3 rounded-none text-xs font-bold tracking-widest uppercase transition-all duration-300 ${
-            isScrolled 
-              ? 'bg-brand-dark text-white hover:bg-brand-primary' 
-              : 'bg-white text-brand-dark hover:bg-brand-primary hover:text-white'
-          }`}>
-            List with Laura
-          </button>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className={isScrolled ? "md:hidden text-brand-dark" : "md:hidden text-white"}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-0 left-0 w-full h-screen bg-white z-50 flex flex-col items-center justify-center gap-8">
-          <button 
-            className="absolute top-6 right-6 text-brand-dark"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <X size={32} />
-          </button>
-          
-          <Logo variant="dark" className="mb-8" />
-          
-          {['Buy', 'Rent', 'Sell', 'Contact'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-2xl font-serif text-brand-dark hover:text-brand-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
+            <button 
+                className="md:hidden text-white/70 hover:text-white"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {item}
-            </a>
-          ))}
-          <button className="bg-brand-primary text-white px-12 py-4 mt-4 text-sm font-bold tracking-widest uppercase">
-            List with Laura
-          </button>
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
         </div>
-      )}
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+            <div className="md:hidden absolute top-20 left-4 right-4 bg-void border border-white/10 rounded-2xl p-6 flex flex-col gap-4 shadow-2xl z-50">
+                <a href="#how-it-works" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-white/80 hover:text-white">How It Works</a>
+                <a href="#meet-lisa" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-white/80 hover:text-white">Meet Lisa</a>
+                <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium text-white/80 hover:text-white">Pricing</a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-center text-xs font-bold bg-brand text-white px-5 py-3 rounded-full">
+                    BOOK A CALL
+                </a>
+            </div>
+        )}
     </nav>
   );
 };

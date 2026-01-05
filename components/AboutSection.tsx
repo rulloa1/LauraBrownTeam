@@ -1,62 +1,67 @@
 import React from 'react';
-import { ArrowRight, Star, Award, Users } from 'lucide-react';
+import { Mic } from 'lucide-react';
 
-const AboutSection: React.FC = () => {
+const MeetLisa: React.FC = () => {
   return (
-    <section className="bg-white py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-          
-          {/* Left: Image Composition */}
-          <div className="relative w-full lg:w-1/2">
-            <div className="relative aspect-[3/4] bg-gray-200">
-              <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" 
-                alt="Laura Brown Real Estate Agent" 
-                className="w-full h-full object-cover grayscale-[0.2]"
-              />
-              
-              {/* Border Outline Accent */}
-              <div className="absolute top-6 -left-6 w-full h-full border-2 border-brand-primary z-[-1] hidden md:block" />
-            </div>
-          </div>
-
-          {/* Right: Content */}
-          <div className="w-full lg:w-1/2 space-y-8">
-            <div>
-              <span className="text-brand-primary text-xs font-bold tracking-[0.2em] uppercase mb-4 block">About Laura Brown</span>
-              <h2 className="text-4xl lg:text-6xl font-serif text-brand-dark leading-tight mb-6">
-                Your Strategic <br />
-                <span className="italic text-gray-400">Real Estate Partner.</span>
-              </h2>
-            </div>
-
-            <p className="text-gray-600 text-lg font-light leading-relaxed">
-              With deep expertise in Spring's real estate market, Laura Brown brings a unique blend of data-driven strategy and concierge service. She doesn't just sell homes; she curates lifestyles and manages complex transactions with grace and precision.
-            </p>
-
-            <div className="grid grid-cols-2 gap-8 py-8 border-y border-gray-100">
-              <div className="flex flex-col gap-2">
-                <span className="text-3xl font-serif text-brand-primary">Top 1%</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-gray-500">Producer Nationwide</span>
-              </div>
-              <div className="flex flex-col gap-2">
-                <span className="text-3xl font-serif text-brand-primary">1,200+</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-gray-500">Families Helped</span>
-              </div>
-            </div>
-
-            <div className="pt-4">
-              <button className="bg-brand-dark text-white px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-primary transition-all duration-300">
-                Work with Laura
-              </button>
-            </div>
-          </div>
-
+    <section id="meet-lisa" className="w-full max-w-5xl mx-auto px-6 py-20 relative z-10 flex flex-col items-center">
+        
+        <div className="text-center mb-16 space-y-3 animate-fade-in-up opacity-0" style={{animationDelay: '0.1s', animationFillMode: 'forwards'}}>
+            <h2 className="text-5xl md:text-7xl font-display font-medium tracking-tight text-white">Meet Lisa</h2>
+            <p className="text-xl md:text-2xl text-white/50 font-light tracking-tight">Your Intelligent AI Digital Employee</p>
         </div>
-      </div>
+
+        {/* Grid Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 w-full mb-16 animate-fade-in-up opacity-0" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
+            
+            <div className="group p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-300">
+                 <h3 className="text-lg font-semibold text-white mb-2 tracking-tight">Books Appointments</h3>
+                 <p className="text-sm text-white/60 font-light">Schedules directly into your calendar</p>
+            </div>
+            
+            <div className="group p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-300">
+                 <h3 className="text-lg font-semibold text-white mb-2 tracking-tight">Lead Generation</h3>
+                 <p className="text-sm text-white/60 font-light">Qualifies and nurtures <span className="text-brand">prospects</span></p>
+            </div>
+
+            <div className="group p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-300">
+                 <h3 className="text-lg font-semibold text-white mb-2 tracking-tight">SMS & Email</h3>
+                 <p className="text-sm text-white/60 font-light">Automated confirmations and <span className="text-brand">follow-ups</span></p>
+            </div>
+
+            <div className="group p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-300">
+                 <h3 className="text-lg font-semibold text-white mb-2 tracking-tight">Multilingual</h3>
+                 <p className="text-sm text-white/60 font-light">Speaks 40+ languages fluently</p>
+            </div>
+
+            <div className="group p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-300">
+                 <h3 className="text-lg font-semibold text-white mb-2 tracking-tight">Calendar Integration</h3>
+                 <p className="text-sm text-white/60 font-light"><span className="text-brand">Real-time</span> availability checking</p>
+            </div>
+
+            <div className="group p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-all duration-300">
+                 <h3 className="text-lg font-semibold text-white mb-2 tracking-tight">Programmable</h3>
+                 <p className="text-sm text-white/60 font-light">Customized to your business</p>
+            </div>
+        </div>
+
+        {/* Voice Interaction */}
+        <div className="flex flex-col items-center gap-6 animate-fade-in-up opacity-0" style={{animationDelay: '0.4s', animationFillMode: 'forwards'}}>
+            <div className="relative group cursor-pointer">
+                {/* Glow */}
+                <div className="absolute inset-0 bg-brand/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10 w-28 h-28 rounded-full border border-white/10 bg-gradient-to-b from-white/5 to-black flex flex-col items-center justify-center gap-2 transition-transform duration-300 group-hover:scale-105 group-hover:border-white/20">
+                    <Mic className="w-8 h-8 text-white stroke-[1.5]" />
+                </div>
+                <div className="absolute -bottom-8 w-full text-center text-[10px] text-white/40 uppercase tracking-widest font-medium">Talk to Lisa</div>
+            </div>
+
+            <button className="mt-8 px-10 py-3 rounded-full border border-brand text-brand hover:bg-brand hover:text-white transition-all duration-300 text-sm font-medium tracking-wide">
+                Ready to talk
+            </button>
+        </div>
     </section>
   );
 };
 
-export default AboutSection;
+export default MeetLisa;

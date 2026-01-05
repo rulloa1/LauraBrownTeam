@@ -1,69 +1,84 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { Mail, Phone, ChevronDown } from 'lucide-react';
 
-const Neighborhoods: React.FC = () => {
-  const areas = [
-    {
-      name: "The Woodlands",
-      image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
-      count: "124 Listings"
-    },
-    {
-      name: "Gleannloch Farms",
-      image: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=800&q=80",
-      count: "45 Listings"
-    },
-    {
-      name: "Auburn Lakes",
-      image: "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80",
-      count: "18 Listings"
-    },
-    {
-      name: "Benders Landing",
-      image: "https://images.unsplash.com/photo-1472224371017-08207f84aaae?auto=format&fit=crop&w=800&q=80",
-      count: "32 Listings"
-    }
-  ];
-
+const ContactSection: React.FC = () => {
   return (
-    <section className="bg-brand-light py-24">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-           <div>
-              <span className="text-brand-primary text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Explore Areas</span>
-              <h2 className="text-4xl font-serif text-brand-dark">Popular Neighborhoods</h2>
-           </div>
-           <a href="#" className="hidden md:flex items-center gap-2 text-brand-dark hover:text-brand-primary text-xs font-bold uppercase tracking-widest transition-all mt-4 md:mt-0">
-              View All Areas <ArrowRight size={16} />
-           </a>
-        </div>
+    <section id="contact" className="w-full bg-[#080808] border-t border-white/5 py-24 px-6 relative z-10">
+        <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 className="text-4xl md:text-5xl font-display font-semibold tracking-tight text-white mb-6">
+                        Book a<br />Discovery Call
+                    </h2>
+                    <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-sm">
+                        Ready to automate your front desk? See if your business qualifies for Roys Company deployment.
+                    </p>
+                    
+                    <div className="space-y-4">
+                        <div className="flex items-center gap-3 text-sm text-white/70">
+                            <Mail className="w-4 h-4 text-brand" />
+                            growth@royscompany.com
+                        </div>
+                        <div className="flex items-center gap-3 text-sm text-white/70">
+                            <Phone className="w-4 h-4 text-brand" />
+                            (555) 123-4567
+                        </div>
+                    </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {areas.map((area, index) => (
-            <div key={index} className="group relative h-[450px] overflow-hidden cursor-pointer">
-              <img 
-                src={area.image} 
-                alt={area.name} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-[0.8]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80" />
-              
-              <div className="absolute bottom-0 left-0 p-8 w-full border-b-4 border-transparent group-hover:border-brand-primary transition-all duration-300">
-                <h3 className="text-2xl font-serif text-white mb-2">{area.name}</h3>
-                <p className="text-brand-primary text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">{area.count}</p>
-              </div>
+                    <div className="mt-12 p-4 rounded-lg bg-white/5 border border-white/10 inline-flex items-center gap-3">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand"></span>
+                        </span>
+                        <span className="text-xs font-medium text-white/80">Onboarding 3 new partners this week</span>
+                    </div>
+                </div>
+
+                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                            <label className="text-xs font-medium text-white/40 uppercase tracking-wide">Name</label>
+                            <input type="text" className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all" placeholder="John Doe" />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-xs font-medium text-white/40 uppercase tracking-wide">Company</label>
+                            <input type="text" className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all" placeholder="Apex Roofing" />
+                        </div>
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="text-xs font-medium text-white/40 uppercase tracking-wide">Industry</label>
+                        <div className="relative">
+                            <select className="w-full appearance-none bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all cursor-pointer">
+                                <option className="bg-[#111]">Roofing</option>
+                                <option className="bg-[#111]">HVAC</option>
+                                <option className="bg-[#111]">Plumbing</option>
+                                <option className="bg-[#111]">Other Contractor</option>
+                            </select>
+                            <ChevronDown className="absolute right-4 top-3.5 w-4 h-4 text-white/30 pointer-events-none" />
+                        </div>
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="text-xs font-medium text-white/40 uppercase tracking-wide">Monthly Call Volume</label>
+                        <div className="relative">
+                            <select className="w-full appearance-none bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-brand/50 focus:ring-1 focus:ring-brand/50 transition-all cursor-pointer">
+                                <option className="bg-[#111]">0 - 50</option>
+                                <option className="bg-[#111]">50 - 200</option>
+                                <option className="bg-[#111]">200+</option>
+                            </select>
+                            <ChevronDown className="absolute right-4 top-3.5 w-4 h-4 text-white/30 pointer-events-none" />
+                        </div>
+                    </div>
+
+                    <button type="submit" className="w-full py-3.5 bg-brand hover:bg-brandDark text-white font-semibold text-xs uppercase tracking-widest rounded-lg transition-colors duration-300 shadow-[0_0_20px_rgba(249,85,0,0.3)]">
+                        Schedule Demo
+                    </button>
+                </form>
             </div>
-          ))}
         </div>
-        
-        <div className="mt-8 md:hidden text-center">
-             <a href="#" className="inline-flex items-center gap-2 text-brand-dark font-bold uppercase tracking-widest text-xs">
-              View All Areas <ArrowRight size={16} />
-           </a>
-        </div>
-      </div>
     </section>
   );
 };
 
-export default Neighborhoods;
+export default ContactSection;

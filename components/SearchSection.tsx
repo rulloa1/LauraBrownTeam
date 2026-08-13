@@ -56,9 +56,9 @@ const PricingSection: React.FC = () => {
                     </li>
                 </ul>
 
-                <button className="w-full py-3 rounded-lg border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-colors text-sm font-medium">
-                    Get Started
-                </button>
+                <a href="#contact" className="w-full py-3 rounded-lg border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-colors text-sm font-medium text-center">
+                    Discuss this plan
+                </a>
             </div>
 
             {/* Professional Plan */}
@@ -115,10 +115,10 @@ const PricingSection: React.FC = () => {
                     </li>
                 </ul>
 
-                <button className="w-full py-3 rounded-lg bg-brand hover:bg-brandDark text-white transition-all shadow-[0_0_20px_rgba(249,85,0,0.3)] text-sm font-semibold flex items-center justify-center gap-2">
-                    Get Started
+                <a href="#contact" className="w-full py-3 rounded-lg bg-brand hover:bg-brandDark text-white transition-all shadow-[0_0_20px_rgba(249,85,0,0.3)] text-sm font-semibold flex items-center justify-center gap-2">
+                    Discuss this plan
                     <ChevronRight className="w-4 h-4" />
-                </button>
+                </a>
             </div>
 
             {/* Premium Plan */}
@@ -158,9 +158,9 @@ const PricingSection: React.FC = () => {
                     </li>
                 </ul>
 
-                <button className="w-full py-3 rounded-lg border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-colors text-sm font-medium">
-                    Get Started
-                </button>
+                <a href="#contact" className="w-full py-3 rounded-lg border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-colors text-sm font-medium text-center">
+                    Discuss this plan
+                </a>
             </div>
 
         </div>

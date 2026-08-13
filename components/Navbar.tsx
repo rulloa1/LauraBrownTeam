@@ -14,7 +14,6 @@ const Navbar: React.FC = () => {
                 <a href="#how-it-works" className="text-[11px] font-medium text-white/60 hover:text-white transition-colors">How It Works</a>
                 <a href="#meet-lisa" className="text-[11px] font-medium text-white/60 hover:text-white transition-colors">Meet Lisa</a>
                 <a href="#pricing" className="text-[11px] font-medium text-white/60 hover:text-white transition-colors">Pricing</a>
-                <a href="#faq" className="text-[11px] font-medium text-white/60 hover:text-white transition-colors">FAQ</a>
             </div>
 
             <a href="#contact" className="hidden md:block text-[10px] font-bold bg-gradient-to-r from-brand to-brandDark text-white px-5 py-2 rounded-full hover:brightness-110 transition-all shadow-[0_0_15px_rgba(249,85,0,0.3)]">

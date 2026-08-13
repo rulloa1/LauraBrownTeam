@@ -44,17 +44,17 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-4 animate-fade-in-up opacity-0" style={{animationDelay: '0.7s', animationFillMode: 'forwards'}}>
-                <button className="group relative inline-flex items-center gap-2 pl-6 pr-5 py-3.5 bg-void border border-brand text-white rounded-full text-sm font-semibold tracking-wide hover:bg-brand hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(249,85,0,0.15)] hover:shadow-[0_0_30px_rgba(249,85,0,0.4)]">
+                <a href="#how-it-works" className="group relative inline-flex items-center gap-2 pl-6 pr-5 py-3.5 bg-void border border-brand text-white rounded-full text-sm font-semibold tracking-wide hover:bg-brand hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(249,85,0,0.15)] hover:shadow-[0_0_30px_rgba(249,85,0,0.4)]">
                     Learn More
                     <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                </button>
+                </a>
                 
-                <button className="inline-flex items-center gap-3 px-6 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-sm font-medium text-white transition-all">
+                <a href="#contact" className="inline-flex items-center gap-3 px-6 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-sm font-medium text-white transition-all">
                     <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
                         <Play className="w-3 h-3 fill-white text-white ml-0.5" />
                     </div>
-                    Watch Demo
-                </button>
+                    Request a demo
+                </a>
             </div>
         </div>
 
